@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SMART TOLL COLLECTION SYSTEM</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/lib/jquery-1.11.3.min.js"></script>
+        <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://cdn.pubnub.com/pubnub-3.7.18.min.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+      <!-- VEHICLE REGISTRATION PAGE -->
+      <div data-role="page" id="appRegister">
+          <div data-role="header" data-theme="b">
+              <h1>AUTOMATED<br>TOLL</h1>
+                </div>
+                <br><br><br><br><br>
+                <div class='containerr'>
+                    <div data-role="header" data-theme="b">
+                        <h1>CAR INFO</h1>
+                    </div>
+                    <div align="center" style="padding:10px 0px">
+                        <label >Please enter your Vehicle Registration number:</label>
+                        <input id="numberVehicle" type="text" name="name" data-mini="true"/>
+                        <input id="vehicle-num-submit"  type="submit" value="submit"/>
+                    </div>
+                </div>
+            </div>
+    <!-- VEHICLE INFO PAGE -->
+            <div data-role="page" id="vehicleInfo">
+                <div data-role="header" data-theme="b">
+                    <h4>AUTOMATED<br>TOLL</h4>
+                </div>
+                <div >
+                    <a href="#" id="resetButton" class="ui-btn-left ui-icon-gear ui-btn-icon-notext ui-corner-all" data-inline="true" onclick="app.reset()">RESET</a>
+                    <a href="#" id="transactionButton" style="padding:15px 10px" class="ui-btn-right ui-icon-grid ui-btn-icon-notext ui-corner-all" onclick="app.transactionStart()">HISTORY</a>
+                </div>
+                <div data-role="header" data-theme="a">
+                    <h5>USER INFO</h5>
+                </div>
+                <div data-role="content" data-theme="a">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <label for="vName">Number</label>
+                                <label for="vName">Owner</label>
+                                <label for="vName">Type</label>
+                                <label for="vName">Balance</label>
+                            </div>
+                            <div class="col-xs-8">
+                                <label>:<a id="userInfo"></a></label>
+                                <label>:<a id="userInfo1"></a></label>
+                                <label>:<a id="userInfo2"></a></label>
+                                <label>:&#8377; <a id="userInfo3"></a></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!-- PREVIOUS  TOLL DETAIL -->      
+                <div data-role="header" data-theme="a">
+                    <h5>LAST TOLL</h5>
+                </div>
+                <div data-role="content" data-theme="a">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <label for="tName">Toll</label>
+                                <label for="tName">Date</label>
+                                <label for="tName">Time</label>
+                                <label style="font-size:50"for="tName">Charges</label>
+                            </div>
+                            <div class="col-xs-8">
+                                <label>:<a id="tollInfo"></a></label>
+                                <label>:<a id="tollInfo1"></a></label>
+                                <label>:<a id="tollInfo0"></a></label>
+                                <label>:&#8377; <a id="tollInfo2"></a></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!--  RECHARGE BLOCK -->
+                <div data-role="header" data-theme="a" >
+                    <h5>RECHARGE</h5>
+                </div><br>
+                <label style="text-align:center;" for="registerAmt">Enter the recharge amount:</label>
+                <div data-role="fieldcontain">
+                    <div align="center">
+                        <label><input type="number" value="0" id="registerAmt" data-mini="true" placeholder="&#8377;"/></label>
+                        <button id="amountButton" type="button" onclick="app.addMoney()" style="width:100px;height:20px:padding:5px 0px;font-size:9px" class="btn btn-sm btn-primary">ADD</button>
+                    </div>
+                </div>
+                <div align="center" data-role="controlgroup" data-type="horizontal">
+                    <button id="blockButton" type="button" onclick="app.blockFunction()" style="width:100px;height:20px:padding:5px 0px;font-size:9px;background: red; color: white;" class="btn btn-sm btn-alert">BLOCK</button>
+                    <button id="blockButton" type="button" onclick="app.unblockFunction()" style="width:100px;height:20px:padding:5px 0px;font-size:9px;background: green; color: white;" class="btn btn-sm btn-alert">UNBLOCK</button>
+                </div>
+                <div data-role="popup" id="addamtpop" data-overlay-theme="b" data-theme="c" data-dismissible="true" style="max-width:300px;text-align:center" data-history="false">
+                    <div data-role="header" >
+                        <h1>Recharge</h1>
+                    </div>
+                    <div  data-role="content" data-theme="a">
+                        <a id="amtRe" align="left"></a>
+                    </div>
+                </div>
+                <!-- TRANSACTION HISTORY -->
+                <div data-role="popup" id="transaction" data-overlay-theme="b" data-theme="a" data-dismissible="true"  data-history="false">
+                  <div data-role="header" data-theme="a">
+                      <h1>HISTORY</h1>
+                  </div>
+                    <table id="transTable" data-role="table" class="movie-list" data-mode="reflow"></table>
+                </div>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
+<!-- End of the Script -->
