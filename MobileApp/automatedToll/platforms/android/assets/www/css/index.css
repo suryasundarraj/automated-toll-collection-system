@@ -1,0 +1,139 @@
+div[data-role='fieldcontain'] label{
+  width: 100px !important; /* this is not working :( */
+}
+.containerr {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    padding: 0px 0px 8px 0px;
+    margin-left: 3em;
+    margin-right: 4em;
+}
+
+/* These apply across all breakpoints because they are outside of a media query */
+/* Make the labels light gray all caps across the board */
+.movie-list thead th,
+.movie-list tbody th .ui-table-cell-label,
+.movie-list tbody td .ui-table-cell-label {
+    text-transform: uppercase;
+    font-size: .5em;
+    color: rgba(0,0,0,0.5);
+    font-weight: normal;
+}
+/* White bg, large blue text for rank and title */
+.movie-list tbody th {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #77bbff;
+    text-align: center;
+}
+/*  Add a bit of extra left padding for the title */
+.movie-list tbody td.title {
+    padding-left: .8em;
+}
+/* Add strokes */
+.movie-list thead th {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.movie-list tbody th,
+.movie-list tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+/*  Custom stacked styles for mobile sizes */
+/*  Use a max-width media query so we don't have to undo these styles */
+@media (max-width: 40em) {
+    /*  Negate the margin between sections */
+    .movie-list tbody th {
+        margin-top: 0;
+        text-align: left;
+
+    }
+    /*  White bg, large blue text for rank and title */
+    .movie-list tbody th,
+    .movie-list tbody td.title {
+        display: block;
+        font-size: 1.2em;
+        line-height: 110%;
+        padding: .5em .5em;
+        background-color: #fff;
+        color: #77bbff;
+        -moz-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        box-shadow: 0 1px 6px rgba(0,0,0,.1);
+    }
+    /*  Hide labels for rank and title */
+    .movie-list tbody th .ui-table-cell-label,
+    .movie-list tbody td.title .ui-table-cell-label {
+        display: none;
+    }
+    /*  Position the title next to the rank, pad to the left */
+    .movie-list tbody td.title {
+        margin-top: -2.1em;
+        padding-left: 2.2em;
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+    /*  Make the data bold */
+    .movie-list th,
+    .movie-list td {
+        font-weight: bold;
+    }
+    /* Make the label elements a percentage width */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        min-width: 40%;
+    }
+}
+/* Media query to show as a standard table at wider widths */
+@media ( min-width: 40em ) {
+    /* Show the table header rows */
+    .movie-list td,
+    .movie-list th,
+    .movie-list tbody th,
+    .movie-list tbody td,
+    .movie-list thead td,
+    .movie-list thead th {
+        display: table-cell;
+        margin: 0;
+    }
+    /* Hide the labels in each cell */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        display: none;
+    }
+}
+/* Hack to make IE9 and WP7.5 treat cells like block level elements */
+/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this */
+@media ( max-width: 40em ) {
+    .movie-list td,
+    .movie-list th {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        clear: left;
+    }
+}
+
+.ui-mobile label, div.ui-controlgroup-label {
+    font-weight: 400;
+    font-size:12px;
+}
+
+.col-xs-4 {
+    text-transform: uppercase;
+    font-weight:normal;
+    color: rgba(0, 0, 0, 0.5);
+    /*font-family: Helvetica Neue,Helvetica,Arial,sans-serif;*/
+}
+
+h1,h5,h4,h3{
+    font-family:Courier;
+    font-weight: bold;
+}
+
+
+/*End of the Styling*/

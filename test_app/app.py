@@ -1,5 +1,5 @@
 '''*********************************************************************************
-TESTAPP - KITCHEN TRACKER
+TESTAPP - AUTOMATED TOLL BOOTH
 *********************************************************************************'''
 from pubnub import Pubnub
 from threading import Thread
@@ -23,11 +23,14 @@ def callback(message, channel):
 def dataHandling(stdin):
 		l_action = int(stdin.readline().strip())
 		if(l_action == 0):
-			pubnub.publish(channel='carIdentificanApp-req',message={"requester":"APP","requestType":0, "vechileNumber":"KA01M1234"})
+			pubnub.publish(channel='vehicleIdentificanApp-req',message={"requester":"APP","requestType":0, "vehicleNumber":"KA01M1234"})
 		elif(l_action == 1):
-			pubnub.publish(channel='carIdentificanApp-req', 
-					message={"requester":"APP","requestType":1, "vechileNumber":"KA01M1234", "rechargeAmt":500})
+			pubnub.publish(channel='vehicleIdentificanApp-req', 
+					message={"requester":"APP","requestType":1, "vehicleNumber":"KA01M1234", "rechargeAmt":500})
 		elif(l_action == 2):
+			pubnub.publish(channel='vehicleIdentificanApp-req', 
+					message={"requester":"APP","requestType":2, "vehicleNumber":"KA01M1234"})
+		elif(l_action == 3):
 			print g_vechileData
 		else:
 			pass
