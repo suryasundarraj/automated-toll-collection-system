@@ -45,7 +45,9 @@ Step 7: Upload the Code to the ESP8266
 
 MOBILE APP BUILD
 -----------------
-Steps to be followed to Build and Run the Android App for Automated System
+Steps to be followed to Build and Run the Android App for Smart Toll Collection System
+(Note : Assumed Cordova framework & android SDK is installed in your system)
+(Note : For a pre-compiled app follow step 4)
 
 Step 1 : Change the cordova project directory 
 
